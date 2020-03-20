@@ -22,12 +22,11 @@ function IndexPage (props) {
   
     return (
       <Layout pageTitle="Realtime Data Visualization">
-        <div style ={{display: 'flex'}}>
-          <div style={{display: 'flex', flexDirection: 'column'}}>
+        <div style ={{display: 'flex', width: '100%'}}>
+          <div style={{display: 'flex', flexDirection: 'column', width: '20%', alignItems: 'center'}}>
         {
           filteredStats.length && filteredStats.map(value => {
             const {
-              country_name,
               total_cases,
               total_deaths,
               active_cases,
@@ -36,19 +35,22 @@ function IndexPage (props) {
             
             const date = moment(record_date).format('ddd hh:mm')
             return(
-            <div style={{display: 'flex', backgroundColor: 'gray'}}>
-              <div style={{backgroundColor: 'white', marginBottom: '20px'}}>
+            <div style={{display: 'flex', width: '100%', justifyContent: 'center', backgroundColor: 'gray', marginBottom: '10px'}}>
+              <div style={{justifyContent: 'center', alignItems: 'center', color: 'white', padding: '10px'}}>
                   { `Total cases: ${total_cases}` }
-                  <div style={{backgroundColor: 'white'}}>
-                  { `Confirmed: ${active_cases}, deaths: ${total_deaths}` }  
-                </div>
-                  { `Fecha: ${date} hora` }  
+                  <div>
+                    { `Confirmed: ${active_cases}` }  
+                  </div>
+                  <div>
+                    { `deaths: ${total_deaths}` }  
+                  </div>
+                  { `Date: ${date} h` }  
               </div>
             </div>)}
             )
         }
         </div>
-        <div style={{display: 'flex', flex: '0.3', flexDirection: 'column', alignItems: 'center'}}>
+        <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', width: '100%'}}>
           <div style={{display: 'flex', paddingTop: '50px', alignItems: 'center', justifyContent: 'center'}}>
             <Container dates={dates} collection={collection}/>
           </div>
