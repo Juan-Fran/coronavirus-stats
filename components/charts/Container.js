@@ -1,7 +1,6 @@
-import React, {useEffect, useState} from 'react'
+import React, { useState } from 'react'
 import HighchartsReact from 'highcharts-react-official'
 import HighchartsExporting from 'highcharts/modules/exporting';
-import Cylinder from 'highcharts/modules/cylinder';
 import Highcharts3d from 'highcharts/highcharts-3d';
 import Highcharts from 'highcharts'
 
@@ -14,7 +13,7 @@ if (typeof Highcharts === 'object') {
 function Container (props){
     const [dates, setDates] = useState(props.dates)
     const [data, setData] = useState(props.collection)
-    console.log(data)
+
     const [options, setOptions] = useState({
         chart: {
             backgroundColor: '#ff0000',
