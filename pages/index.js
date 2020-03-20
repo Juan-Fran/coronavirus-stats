@@ -23,7 +23,7 @@ function IndexPage (props) {
     return (
       <Layout pageTitle="Realtime Data Visualization">
         <div style ={{display: 'flex'}}>
-          <div style={{display: 'flex 0.3'}}>
+          <div style={{display: 'flex', flexDirection: 'column'}}>
         {
           filteredStats.length && filteredStats.map(value => {
             const {
@@ -48,8 +48,8 @@ function IndexPage (props) {
             )
         }
         </div>
-        <div style={{display: 'flex 0.7'}}>
-          <div style={{display: 'flex', paddingTop: '50px'}}>
+        <div style={{display: 'flex', flex: '0.3', flexDirection: 'column', alignItems: 'center'}}>
+          <div style={{display: 'flex', paddingTop: '50px', alignItems: 'center', justifyContent: 'center'}}>
             <Container dates={dates} collection={collection}/>
           </div>
           <div style={{display: 'flex', paddingTop: '50px'}}>
